@@ -10,12 +10,7 @@ class HomeController < ApplicationController
   end
 
   def create_random_user
-    user = User.new
-    user.first_name = Faker::Name.first_name
-    user.last_name = Faker::Name.last_name
-    user.email = Faker::Internet.email
-    user.save!
-    sleep 2
+    RandomUserJob.perform_later
     redirect_to root_path
   end
 
