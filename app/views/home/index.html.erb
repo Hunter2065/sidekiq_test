@@ -11,10 +11,9 @@
         <th scope="col">Email</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="demotable">
       <% @users.each do |user| %>
         <tr>
-          <th scope="row">1</th>
           <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>
           <td><%= user.email %></td>
